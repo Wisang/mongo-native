@@ -1,6 +1,7 @@
 // const uri =
 //   "mongodb+srv://<user>:<password>@<cluster-url>?retryWrites=true&w=majority";
 
+// to initiat change for git
 const mongoose = require('mongoose');
 
 mongoose.connect("mongodb://localhost:27017/fruitsDB");
