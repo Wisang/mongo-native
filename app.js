@@ -1,4 +1,3 @@
-
 // const uri =
 //   "mongodb+srv://<user>:<password>@<cluster-url>?retryWrites=true&w=majority";
 
@@ -44,12 +43,21 @@ const banana = new Fruit({
   review: "very good"
 });
 
-Fruit.insertMany([kiwi, banana], function(error) {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Success");
-  }
-})
+// Fruit.insertMany([kiwi, banana], function(error) {
+// if (error) {
+//   console.log(error);
+// } else {
+//   console.log("Success");
+// }
+// });
 
-// fruit.save();
+Fruit.find(function(err, fruits) {
+  if (err) {
+    console.log(err);
+  } else {
+    mongoose.connection.close();
+    fruits.forEach(function(fruit) {
+      console.log(fruit.name);
+    });
+  }
+});
